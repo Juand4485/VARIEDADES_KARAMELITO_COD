@@ -1,0 +1,23 @@
+{
+  "name": "express-postgresql-app",
+  "version": "1.0.0",
+  "description": "A simple Express application connected to PostgreSQL 17",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "pg": "^8.15.6",
+    "pg-hstore": "^2.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC"
+}
