@@ -63,12 +63,12 @@ export default function StockPage() {
   const [newProduct, setNewProduct] = useState<Producto>({
     codigo_barras: "",
     nombre: "",
-    tipo: "Dulces",
+    tipo: "",
     cantidad_en_stock: 1,
     precio_unitario: 0,
   })
 
-  const tipos = ["Dulces", "Galletas", "Snacks", "Bebidas", "Otros", ]
+  const tipos = ["Hogar", "Limpieza", "Útiles Escolares", "Tecnología", "Juguetería", "Articulos de Regalo", "Mascotas" ]
 
   const [editingProduct, setEditingProduct] = useState<Producto | null>(null)
   const [addingUnitsProduct, setAddingUnitsProduct] = useState<Producto | null>(null)
@@ -152,7 +152,7 @@ export default function StockPage() {
       setNewProduct({
         codigo_barras: "",
         nombre: "",
-        tipo: "Dulces",
+        tipo: "",
         cantidad_en_stock: 1,
         precio_unitario: 0,
       })
@@ -460,6 +460,7 @@ export default function StockPage() {
               </Label>
               <Input
                 id="barcode"
+                placeholder="Código de barras del producto"
                 value={newProduct.codigo_barras}
                 onChange={(e) => setNewProduct({ ...newProduct, codigo_barras: e.target.value })}
                 className="col-span-3"
@@ -472,6 +473,7 @@ export default function StockPage() {
               </Label>
               <Input
                 id="name"
+                placeholder="Nombre del producto"
                 value={newProduct.nombre}
                 onChange={(e) => setNewProduct({ ...newProduct, nombre: e.target.value })}
                 className="col-span-3"
@@ -581,11 +583,11 @@ export default function StockPage() {
                     <SelectValue placeholder="Selecciona un tipo" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Dulces">Dulces</SelectItem>
-                    <SelectItem value="Galletas">Galletas</SelectItem>
-                    <SelectItem value="Snacks">Snacks</SelectItem>
-                    <SelectItem value="Bebidas">Bebidas</SelectItem>
-                    <SelectItem value="Otros">Otros</SelectItem>
+                    {tipos.map((tipo) => (
+                      <SelectItem key={tipo} value={tipo}>
+                        {tipo}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>

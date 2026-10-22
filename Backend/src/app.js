@@ -19,14 +19,19 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(express.json());
 
-// Initialize database connection
-connectDatabase();
+
 
 // Routes
 app.use('/api', detalleVentaRoutes);
 app.use('/api', productoRoutes);
 app.use('/api', ventaRoutes);
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+try {
+    await connectDatabase();
+    app.listen(PORT, () => {
+        console.log(`Server is running on http://localhost:${PORT}`);
+    });
+} catch (error) {
+    console.error('No se pudo conectar a la base de datos. Codigo:', error.code || 'CONEXION');
+    process.exitCode = 1;
+}

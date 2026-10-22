@@ -1,55 +1,12 @@
-# Express PostgreSQL App
+# Servidor de Variedades Karamelito
 
-Este proyecto es una aplicación web construida con Express y TypeScript, que se conecta a una base de datos PostgreSQL 17. A continuación se describen los componentes principales del proyecto.
+API de inventario y ventas escrita en JavaScript con Express y PostgreSQL.
 
-## Estructura del Proyecto
+1. Instala dependencias con `npm ci`.
+2. Copia `.env.example` a `.env` y completa la configuración privada.
+3. Comprueba que PostgreSQL y la base compatible estén disponibles.
+4. Ejecuta `npm start` para abrir la API en `http://localhost:5000/api`.
 
-```
-express-postgresql-app
-├── src
-│   ├── app.ts               # Punto de entrada de la aplicación
-│   ├── config
-│   │   └── database.ts      # Configuración de la conexión a PostgreSQL
-│   ├── controllers
-│   │   └── index.ts         # Controladores para manejar las rutas
-│   ├── routes
-│   │   └── index.ts         # Configuración de las rutas de la aplicación
-│   └── types
-│       └── index.ts         # Tipos personalizados para las solicitudes y respuestas
-├── package.json              # Configuración de npm y dependencias
-├── tsconfig.json             # Configuración de TypeScript
-└── README.md                 # Documentación del proyecto
-```
+Las rutas están en `src/routes/`, las operaciones en `src/controllers/` y `src/models/`, y la conexión en `src/config/database.js`.
 
-## Instalación
-
-1. Clona el repositorio:
-   ```
-   git clone <URL_DEL_REPOSITORIO>
-   cd express-postgresql-app
-   ```
-
-2. Instala las dependencias:
-   ```
-   npm install
-   ```
-
-3. Configura la conexión a la base de datos en `src/config/database.ts`.
-
-## Uso
-
-Para iniciar la aplicación, ejecuta el siguiente comando:
-
-```
-npm start
-```
-
-La aplicación se ejecutará en `http://localhost:3000`.
-
-## Contribuciones
-
-Las contribuciones son bienvenidas. Si deseas contribuir, por favor abre un issue o envía un pull request.
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT.
+Consulta el [README principal](../README.md) para el inicio completo y los límites de la comprobación.
